@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kompakt-web demo</title>
+<style>
+  body{font:16px/1.5 system-ui,sans-serif;max-width:640px;margin:40px auto;padding:0 16px;color:#1f2328}
+  fieldset{border:1px solid #d0d7de;border-radius:8px;margin:16px 0}
+  #out{white-space:pre-wrap;background:#f6f8fa;padding:12px;border-radius:8px;min-height:3em}
+</style>
+</head>
+<body>
+<h1>kompakt-web demo</h1>
+<p>Pick a PDF. It is compressed in this tab; nothing is uploaded.</p>
+<input type="file" id="file" accept=".pdf,application/pdf">
+<fieldset><legend>Preset</legend>
+  <label><input type="radio" name="q" value="low"> low (72 dpi)</label>
+  <label><input type="radio" name="q" value="medium" checked> medium (120 dpi)</label>
+  <label><input type="radio" name="q" value="high"> high (200 dpi)</label>
+</fieldset>
+<div id="out">Waiting for a file…</div>
+<p><a id="dl" hidden>Download result</a></p>
+
+<script type="module">
+  import * as pdfjs from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.min.mjs';
+  import { compressPdf, PRESETS } from '../src/compress.js';
+  pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.worker.min.mjs';
+
+  const out = document.getElementById('out'), dl = document.getElementById('dl');
+  const kb = n => n > 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.round(n / 1024) + ' KB';
+
+  document.getElementById('file').addEventListener('change', async e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const preset = PRESETS[document.querySelector('input[name=q]:checked').value];
+    dl.hidden = true;
+    const t0 = performance.now();
+    try {
+      const r = await compressPdf(await file.arrayBuffer(), {
+        pdfjs, ...preset, onProgress: (i, n) => { out.textContent = `Page ${i} of ${n}…`; },
+      });
+      const secs = ((performance.now() - t0) / 1000).toFixed(1);
+      if (r.ratio <= 0) {
+        out.textContent = `${kb(r.inputBytes)} → ${kb(r.outputBytes)} in ${secs}s: the result is bigger. Keep the original (likely a text/vector PDF).`;
+        return;
+      }
+      out.textContent = `${kb(r.inputBytes)} → ${kb(r.outputBytes)} (−${(r.ratio * 100).toFixed(1)}%), ${r.pages} pages, ${secs}s`;
+      dl.href = URL.createObjectURL(r.blob);
+      dl.download = file.name.replace(/\.pdf$/i, '') + '_compressed.pdf';
+      dl.hidden = false;
+    } catch (err) {
+      out.textContent = 'Error: ' + err.message;
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "kompakt-web",
+  "version": "0.1.0",
+  "description": "Compress PDFs entirely in the browser: pdf.js render → canvas → JPEG → streaming PDF writer. No upload, no server.",
+  "type": "module",
+  "main": "src/compress.js",
+  "exports": {
+    ".": "./src/compress.js",
+    "./writer": "./src/pdf-writer.js"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "demo": "python3 -m http.server 8080",
+    "corpus": "node bench/make-corpus.mjs",
+    "bench": "node bench/run.mjs"
+  },
+  "peerDependencies": {
+    "pdfjs-dist": ">=4.4"
+  },
+  "devDependencies": {
+    "pdfjs-dist": "4.4.168",
+    "playwright-core": "1.55.0"
+  },
+  "keywords": [
+    "pdf",
+    "compression",
+    "pdfjs",
+    "canvas",
+    "browser",
+    "privacy",
+    "offline"
+  ],
+  "repository": "github:xronocode/kompakt-web",
+  "homepage": "https://kompakt.xronocode.com/guides/how-browser-pdf-compression-works",
+  "license": "MIT",
+  "author": "Mikhail Yevdokimov"
+}

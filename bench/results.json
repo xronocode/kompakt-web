@@ -1,0 +1,134 @@
+[
+ {
+  "file": "A-text-report.pdf",
+  "size": 97967,
+  "words": 6000,
+  "q": "low",
+  "web": null,
+  "gs": {
+   "bytes": 87649,
+   "sec": 0.163,
+   "words": 6000
+  }
+ },
+ {
+  "file": "A-text-report.pdf",
+  "size": 97967,
+  "words": 6000,
+  "q": "medium",
+  "web": null,
+  "gs": {
+   "bytes": 87477,
+   "sec": 0.211,
+   "words": 6000
+  }
+ },
+ {
+  "file": "A-text-report.pdf",
+  "size": 97967,
+  "words": 6000,
+  "q": "high",
+  "web": null,
+  "gs": {
+   "bytes": 91734,
+   "sec": 0.173,
+   "words": 6000
+  }
+ },
+ {
+  "file": "B-scanned-doc.pdf",
+  "size": 3087215,
+  "words": 0,
+  "q": "low",
+  "web": {
+   "bytes": 88129,
+   "sec": 2.433,
+   "words": 0
+  },
+  "gs": {
+   "bytes": 119073,
+   "sec": 16.243,
+   "words": 0
+  }
+ },
+ {
+  "file": "B-scanned-doc.pdf",
+  "size": 3087215,
+  "words": 0,
+  "q": "medium",
+  "web": {
+   "bytes": 262402,
+   "sec": 2.246,
+   "words": 0
+  },
+  "gs": {
+   "bytes": 336034,
+   "sec": 16.156,
+   "words": 0
+  }
+ },
+ {
+  "file": "B-scanned-doc.pdf",
+  "size": 3087215,
+  "words": 0,
+  "q": "high",
+  "web": {
+   "bytes": 754554,
+   "sec": 1.848,
+   "words": 0
+  },
+  "gs": {
+   "bytes": 3088752,
+   "sec": 0.226,
+   "words": 0
+  }
+ },
+ {
+  "file": "C-photo-deck.pdf",
+  "size": 4204565,
+  "words": 32,
+  "q": "low",
+  "web": {
+   "bytes": 421456,
+   "sec": 2.197,
+   "words": 0
+  },
+  "gs": {
+   "bytes": 700043,
+   "sec": 8.59,
+   "words": 32
+  }
+ },
+ {
+  "file": "C-photo-deck.pdf",
+  "size": 4204565,
+  "words": 32,
+  "q": "medium",
+  "web": {
+   "bytes": 1444364,
+   "sec": 2.588,
+   "words": 0
+  },
+  "gs": {
+   "bytes": 3985593,
+   "sec": 8.733,
+   "words": 32
+  }
+ },
+ {
+  "file": "C-photo-deck.pdf",
+  "size": 4204565,
+  "words": 32,
+  "q": "high",
+  "web": {
+   "bytes": 4071826,
+   "sec": 3.647,
+   "words": 0
+  },
+  "gs": {
+   "bytes": 4144800,
+   "sec": 0.4,
+   "words": 32
+  }
+ }
+]

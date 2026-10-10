@@ -1,0 +1,5 @@
+node_modules/
+bench/corpus/
+bench/out/
+bench/img/
+.DS_Store
