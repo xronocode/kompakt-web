@@ -46,6 +46,7 @@
         return;
       }
       out.textContent = `${kb(r.inputBytes)} → ${kb(r.outputBytes)} (−${(r.ratio * 100).toFixed(1)}%), ${r.pages} pages, ${secs}s`;
+      if (dl.href) URL.revokeObjectURL(dl.href);
       dl.href = URL.createObjectURL(r.blob);
       dl.download = file.name.replace(/\.pdf$/i, '') + '_compressed.pdf';
       dl.hidden = false;

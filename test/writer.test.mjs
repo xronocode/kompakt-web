@@ -46,3 +46,18 @@ test('pdf.js parses the file and keeps page sizes in points', async () => {
   assert.deepEqual([v2.width, v2.height], [960, 540]);
   await doc.destroy();
 });
+
+test('header is %PDF-1.4 followed by a 4-byte binary comment', () => {
+  const pdf = build();
+  assert.equal(pdf.subarray(0, 10).toString('latin1'), '%PDF-1.4\n%');
+  assert.deepEqual([...pdf.subarray(10, 15)], [0xe2, 0xe3, 0xcf, 0xd3, 0x0a]);
+});
+
+test('guards: no pages, addPage after finish, double finish', () => {
+  assert.throws(() => new StreamingPdfWriter().finish(), /at least one page/);
+  const w = new StreamingPdfWriter();
+  w.addPage(612, 792, 8, 8, JPEG);
+  w.finish();
+  assert.throws(() => w.addPage(612, 792, 8, 8, JPEG), /after finish/);
+  assert.throws(() => w.finish(), /called twice/);
+});

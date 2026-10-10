@@ -15,10 +15,11 @@
     "test": "node --test test/*.test.mjs",
     "demo": "python3 -m http.server 8080",
     "corpus": "node bench/make-corpus.mjs",
-    "bench": "node bench/run.mjs"
+    "bench": "node bench/run.mjs",
+    "test:browser": "node test/pdfjs-compat.mjs"
   },
   "peerDependencies": {
-    "pdfjs-dist": ">=4.4"
+    "pdfjs-dist": ">=4.4 <7"
   },
   "devDependencies": {
     "pdfjs-dist": "4.4.168",

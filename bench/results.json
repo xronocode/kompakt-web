@@ -7,7 +7,7 @@
   "web": null,
   "gs": {
    "bytes": 87649,
-   "sec": 0.163,
+   "sec": 0.402,
    "words": 6000
   }
  },
@@ -18,8 +18,8 @@
   "q": "medium",
   "web": null,
   "gs": {
-   "bytes": 87477,
-   "sec": 0.211,
+   "bytes": 87471,
+   "sec": 0.228,
    "words": 6000
   }
  },
@@ -31,7 +31,7 @@
   "web": null,
   "gs": {
    "bytes": 91734,
-   "sec": 0.173,
+   "sec": 0.287,
    "words": 6000
   }
  },
@@ -41,13 +41,13 @@
   "words": 0,
   "q": "low",
   "web": {
-   "bytes": 88129,
-   "sec": 2.433,
+   "bytes": 88113,
+   "sec": 2.298,
    "words": 0
   },
   "gs": {
    "bytes": 119073,
-   "sec": 16.243,
+   "sec": 25.051,
    "words": 0
   }
  },
@@ -57,13 +57,13 @@
   "words": 0,
   "q": "medium",
   "web": {
-   "bytes": 262402,
-   "sec": 2.246,
+   "bytes": 262386,
+   "sec": 3.16,
    "words": 0
   },
   "gs": {
    "bytes": 336034,
-   "sec": 16.156,
+   "sec": 27.925,
    "words": 0
   }
  },
@@ -73,13 +73,13 @@
   "words": 0,
   "q": "high",
   "web": {
-   "bytes": 754554,
-   "sec": 1.848,
+   "bytes": 754538,
+   "sec": 2.713,
    "words": 0
   },
   "gs": {
    "bytes": 3088752,
-   "sec": 0.226,
+   "sec": 0.337,
    "words": 0
   }
  },
@@ -89,13 +89,13 @@
   "words": 32,
   "q": "low",
   "web": {
-   "bytes": 421456,
-   "sec": 2.197,
+   "bytes": 421436,
+   "sec": 2.444,
    "words": 0
   },
   "gs": {
    "bytes": 700043,
-   "sec": 8.59,
+   "sec": 13.164,
    "words": 32
   }
  },
@@ -105,13 +105,13 @@
   "words": 32,
   "q": "medium",
   "web": {
-   "bytes": 1444364,
-   "sec": 2.588,
+   "bytes": 1444344,
+   "sec": 2.629,
    "words": 0
   },
   "gs": {
    "bytes": 3985593,
-   "sec": 8.733,
+   "sec": 12.242,
    "words": 32
   }
  },
@@ -121,13 +121,13 @@
   "words": 32,
   "q": "high",
   "web": {
-   "bytes": 4071826,
-   "sec": 3.647,
+   "bytes": 4071806,
+   "sec": 2.762,
    "words": 0
   },
   "gs": {
    "bytes": 4144800,
-   "sec": 0.4,
+   "sec": 0.541,
    "words": 32
   }
  }
